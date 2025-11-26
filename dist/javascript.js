@@ -6,7 +6,7 @@ var t
 state.custom = {}
 
 // CREATE A NAME FOR THE USER
-state.custom.name = !dphelper.storage.get("name") ? "Human" : dphelper.storage.get("name")
+state.custom.name = !store.get("name") ? "Human" : store.get("name")
 
 // CREATE A STATE FUNCTION 000
 state.custom.fun000 = () => alert(state.custom.name)
@@ -67,7 +67,7 @@ const openLayerPrompt = () => {
       const name = $("#input___prompt").val()
       state.custom.name = name
       $("#yourName").text(name)
-      dphelper.storage.set("name", name)
+      store.set("name", name)
       message("Hello " + name)
     }
   )
